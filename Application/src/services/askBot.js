@@ -1,12 +1,13 @@
 import axios from "axios";
 import { EMOTIONALSTATE } from "./emotionDetection";
 import { speakText } from "./textToSpeach";
+import { environment } from "../constants";
 
 
 async function sendMessageToBot(question) {
   try {
     // Send a POST request to the bot API
-    const response = await axios.post("http://localhost:5000/ask_bot", {
+    const response = await axios.post(`${environment.getFullURL()}/ask_bot`, {
       query: `${EMOTIONALSTATE}: ${question}`,
     });
 
@@ -33,7 +34,6 @@ async function sendClick(){
     // Send the message to the bot API and get the response
     const botResponse = await sendMessageToBot(userMessage);
     const splitIndex = botResponse.indexOf(":"); // Occurence of the delimiter between emotion and responseText
-    console.log(botResponse)
     if (splitIndex !== -1) {
       const part1 = botResponse.slice(0, splitIndex);
       const part2 = botResponse.slice(splitIndex + 1);

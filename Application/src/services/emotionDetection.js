@@ -1,4 +1,5 @@
 import axios from "axios";
+import { environment } from "../constants";
 
 const canvas = document.querySelector("#canvas");
 const context = canvas.getContext("2d");
@@ -59,7 +60,7 @@ function captureSnapshot() {
 // Send snapshot to the API using Axios
 function sendSnapshotToAPI(imageDataUrl) {
   axios
-    .post("http://localhost:5000/predict_emotion", {
+    .post(`${environment.getFullURL()}/predict_emotion`, {
       image: imageDataUrl, // Send base64 image
     })
     .then((response) => {
