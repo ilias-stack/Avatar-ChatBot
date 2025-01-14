@@ -1,0 +1,132 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+#app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+#content {
+  position: absolute;
+  z-index: 1; /* Content above the canvas */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width of the screen */
+  padding: 10px 20px; /* Padding around the content */
+}
+
+.navbar {
+  width: 100%;
+  background: rgba(40, 40, 40, 0.7);
+  padding: 15px 20px;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2; 
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2); 
+}
+
+.navbar h1 {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+#emotion{
+  right: 0;
+  margin-right: 20px;
+  margin-top: 30px;
+  position: inherit;
+  font-weight: bold;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* Places the canvas in the background */
+  display: block;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+/* Bottom bar styling */
+.bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Input box styling */
+.bottom-bar input[type="text"] {
+  flex: 1;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Button styling */
+.bottom-bar button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Voice chat icon */
+.voice-icon {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

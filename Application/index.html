@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alien Assistant</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="content">
+        <div class="navbar">
+          <h1>This is your alien assistant</h1>
+          <p id="emotion"></p>
+        </div>
+      </div>
+      <canvas id="bg"></canvas>
+      <!-- Canvas used for images only -->
+      <canvas id="canvas" style="display: none;"></canvas> 
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="bottom-bar">
+      <input type="text" id="message-input" placeholder="Type a message..." />
+      <button id="send-button">Send</button>
+      <button class="voice-icon">
+        🎤
+      </button>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
