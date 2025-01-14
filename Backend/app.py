@@ -28,7 +28,7 @@ def extract_features(image):
     return feature / 255.0
 
 # Initialise the llm bot module
-emotion_bot=EmotionBot('gemini-1.5-flash')    
+emotion_bot=EmotionBot('gemini-pro')    
 
 app = Flask(__name__)
 CORS(app, resources={r"*": {"origins": "*"}})
