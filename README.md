@@ -67,5 +67,5 @@ docker-compose logs -f
 | Service       | URL           |
 |---------------|---------------|
 | Application   | [localhost:80](http://localhost)  | 
-| Backend       | [localhost:5000](http://localhost:5000/)  | 
+| Backend       | [localhost:5000](http://localhost:5000/test)  | 
 
