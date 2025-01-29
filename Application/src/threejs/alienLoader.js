@@ -16,7 +16,6 @@ function addAlienToScene() {
         animations = gltf.animations; 
 
         // Add the model to the scene
-        object.position.set(0, 0, 0);
         myScene.add(object);
 
         if (animations && animations.length > 0) {

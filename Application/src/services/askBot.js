@@ -38,9 +38,9 @@ async function sendClick(){
     if (splitIndex !== -1) {
       const part1 = botResponse.slice(0, splitIndex);
       const part2 = botResponse.slice(splitIndex + 1);
+      console.log(part1)
       if (part2) speakText(part2);
       await playAnimationByName(part1)
-      console.log(part1);
     }
     messageInput.value = "";
   } catch (error) {

@@ -6,6 +6,7 @@ import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
 import { addAlienToScene } from "./alienLoader.js"; 
+import { addSunToEnvironment, addEarthToEnvironment } from "./spaceEnvironment.js";
 
 
 // Setup Three.js renderer
@@ -48,13 +49,30 @@ addAlienToScene()
   });
 
 
+// ADding the sun and earth to the scene
+let sunMesh, earthData;
+
+addSunToEnvironment()
+  .then(s => {
+    sunMesh = s;
+    return addEarthToEnvironment(sunMesh.position);
+  })
+  .then(e => {
+    earthData = e;
+    // Access earthMesh: earthData.earthMesh
+    // Access orbit container: earthData.earthOrbit
+  })
+  .catch(error => {
+    console.error("Celestial error:", error);
+  });
+
 controls.update();
 // Animation loop
 function animate(t = 1) {
   requestAnimationFrame(animate);
 
   controls.update();
-  if(alienMesh) alienMesh.position.y =( Math.cos(t * 0.001) / 5);
+  if(alienMesh) alienMesh.position.y =( Math.cos(t * 0.001) / 5)-1.2;
 
   bloomPass.clear = true;
   composer.render();
