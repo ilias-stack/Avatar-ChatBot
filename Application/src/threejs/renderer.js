@@ -21,7 +21,7 @@ const composer = new EffectComposer(myRenderer);
 const renderPass = new RenderPass(myScene, myCamera);
 const bloomPass = new UnrealBloomPass(
   new THREE.Vector2(window.innerWidth, window.innerHeight),
-  0.5,
+  .75,
   0.85
 );
 
@@ -54,7 +54,7 @@ function animate(t = 1) {
   requestAnimationFrame(animate);
 
   controls.update();
-  if(alienMesh) alienMesh.position.y =( Math.cos(t * 0.001) / 5) -2;
+  if(alienMesh) alienMesh.position.y =( Math.cos(t * 0.001) / 5);
 
   bloomPass.clear = true;
   composer.render();

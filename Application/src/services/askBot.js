@@ -2,6 +2,7 @@ import axios from "axios";
 import { EMOTIONALSTATE } from "./emotionDetection";
 import { speakText } from "./textToSpeach";
 import { environment } from "../constants";
+import { playAnimationByName } from "../threejs/alienLoader";
 
 
 async function sendMessageToBot(question) {
@@ -38,6 +39,7 @@ async function sendClick(){
       const part1 = botResponse.slice(0, splitIndex);
       const part2 = botResponse.slice(splitIndex + 1);
       if (part2) speakText(part2);
+      await playAnimationByName(part1)
       console.log(part1);
     }
     messageInput.value = "";

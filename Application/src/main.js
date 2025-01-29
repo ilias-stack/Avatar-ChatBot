@@ -1,9 +1,10 @@
 import "./style.css";
 import { animate } from "./threejs/renderer";
 import { setupEmotionDetectionService } from "./services/emotionDetection";
-import { sendMessageToBot, sendClick } from "./services/askBot";
+import { sendClick } from "./services/askBot";
 import { init, startRecording, stopRecording } from "./services/speachToText";
 import { speakText } from "./services/textToSpeach";
+import { playAnimationByName } from "./threejs/alienLoader";
 
 animate();
 // setupEmotionDetectionService(1); // Unit in seconds of how
@@ -24,7 +25,7 @@ voiceButton.addEventListener("click", async () => {
     voiceButton.textContent = "🎤"; // Return the original state of button
   } else {
     try {
-      await startRecording(); // Start the recording asynchronously
+      await startRecording(); 
       voiceButton.textContent = "⏹️"; // Update button to indicate recording state
     } catch (error) {
       console.error("Error starting recognition:", error);
@@ -34,6 +35,7 @@ voiceButton.addEventListener("click", async () => {
 });
 
 // Set the first phrase the AI says at each new load
-// window.onload = speakText(
-//   "Greetings, Earthling! I am your friendly alien companion, ready to answer all of your questions!"
-// );
+window.onload = speakText(
+  "Greetings, Earthling! I am your friendly alien companion, ready to answer all of your questions!"
+);
+await playAnimationByName('Friendly')
