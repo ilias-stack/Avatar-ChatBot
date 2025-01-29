@@ -4,9 +4,12 @@ services:
       context: ./Application
       dockerfile: Dockerfile
     ports:
-      - "80:5173"
+      - "80:80"
+    depends_on:
+      - backend
     networks:
       - app_network
+    
 
   backend:
     build:

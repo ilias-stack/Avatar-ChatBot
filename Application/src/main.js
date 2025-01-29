@@ -7,7 +7,7 @@ import { speakText } from "./services/textToSpeach";
 import { playAnimationByName } from "./threejs/alienLoader";
 
 animate();
-// setupEmotionDetectionService(1); // Unit in seconds of how
+setupEmotionDetectionService(1); // Unit in seconds of how
 
 // Handle message sending
 document.querySelector("#send-button").addEventListener("click", async () => {

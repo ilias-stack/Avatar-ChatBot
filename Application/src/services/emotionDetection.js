@@ -3,7 +3,7 @@ import { environment } from "../constants";
 
 const canvas = document.querySelector("#canvas");
 const context = canvas.getContext("2d");
-const videoElement = document.createElement("video"); // We don't need to display the video feed
+const videoElement = document.createElement("video"); // We don t need to display the video feed
 
 let stream;
 

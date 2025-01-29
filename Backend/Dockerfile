@@ -9,6 +9,12 @@ RUN apt-get update && apt-get install -y \
     libssl-dev \
     libffi-dev \
     python3-dev \
+    # OpenCV dependencies
+    libgl1 \
+    libglib2.0-0 \
+    libsm6 \
+    libxrender1 \
+    libxext6 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 

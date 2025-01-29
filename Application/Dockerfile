@@ -1,4 +1,4 @@
-FROM node:22.13.0-alpine
+FROM node:22.13.0-slim 
 
 # Set the working directory
 WORKDIR /usr/src/app
@@ -12,8 +12,5 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
-# Ensure the correct port is exposed (default for Vite is 5173)
-EXPOSE 5173
-
 # Start the application
-CMD ["npm", "run", "dev"]
+ENTRYPOINT ["npm", "run", "dev", "--", "--port=80", "--host=0.0.0.0"]

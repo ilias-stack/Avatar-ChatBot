@@ -33,6 +33,10 @@ emotion_bot=EmotionBot('gemini-pro')
 app = Flask(__name__)
 CORS(app, resources={r"*": {"origins": "*"}})
 
+@app.route('/test', methods=['GET'])
+def test():
+    return 'Hello this is a test and it is working! CONGRATS.'
+
 @app.route('/predict_emotion', methods=['POST'])
 def predict_emotion():
     try:
@@ -94,4 +98,4 @@ def ask_bot():
         }), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
