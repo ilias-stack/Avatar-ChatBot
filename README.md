@@ -5,7 +5,7 @@ A full-stack application with a frontend (Vite/Three) and backend (Python/Flask)
 ## Project Structure
 ```
 Avatar-ChatBot/
-├── Application/ # Frontend (Vite/React)
+├── Application/ # Frontend (Vite/Three)
 │ ├── Dockerfile
 │ ├── package.json
 │ └── src/
@@ -46,7 +46,7 @@ npm run dev      # Start development server
 cd Backend
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
-# venv\Scripts\activate   # Windows
+venv\Scripts\activate   # Windows
 pip install -r requirements.txt
 python app.py
 ```
